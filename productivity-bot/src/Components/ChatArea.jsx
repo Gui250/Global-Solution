@@ -1,6 +1,6 @@
+import { Send } from 'lucide-react';
+
 const ChatArea = ({ messages, input, setInput, handleSend, loading, messagesEndRef }) => {
-  const { Send } = require('lucide-react');
-  
   return (
     <div className="flex-1 flex flex-col">
       {/* Messages */}
@@ -60,3 +60,5 @@ const ChatArea = ({ messages, input, setInput, handleSend, loading, messagesEndR
     </div>
   );
 };
+
+export default ChatArea;

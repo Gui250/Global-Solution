@@ -3,7 +3,9 @@ const openaiAPI = async (prompt) => {
     const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
     if (!apiKey) {
-      console.error("Chave da API não configurada. Configure VITE_OPENAI_API_KEY no arquivo .env");
+      console.error(
+        "Chave da API não configurada. Configure VITE_OPENAI_API_KEY no arquivo .env"
+      );
       return "⚠️ Chave da API não configurada. Por favor, configure a variável VITE_OPENAI_API_KEY no arquivo .env";
     }
 

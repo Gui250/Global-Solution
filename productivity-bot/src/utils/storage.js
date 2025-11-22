@@ -1,23 +1,30 @@
 const loadData = async () => {
   try {
-    const tasksData = await window.storage.get('productivity-tasks');
-    const statsData = await window.storage.get('productivity-stats');
+    const tasksData = localStorage.getItem('productivity-tasks');
+    const statsData = localStorage.getItem('productivity-stats');
+    const messagesData = localStorage.getItem('productivity-messages');
     
     return {
-      tasks: tasksData ? JSON.parse(tasksData.value) : null,
-      stats: statsData ? JSON.parse(statsData.value) : null
+      tasks: tasksData ? JSON.parse(tasksData) : null,
+      stats: statsData ? JSON.parse(statsData) : null,
+      messages: messagesData ? JSON.parse(messagesData) : null
     };
   } catch (error) {
     console.log('Primeira vez usando o bot!');
-    return { tasks: null, stats: null };
+    return { tasks: null, stats: null, messages: null };
   }
 };
 
-const saveData = async (tasks, stats) => {
+const saveData = async (tasks, stats, messages) => {
   try {
-    await window.storage.set('productivity-tasks', JSON.stringify(tasks));
-    await window.storage.set('productivity-stats', JSON.stringify(stats));
+    localStorage.setItem('productivity-tasks', JSON.stringify(tasks));
+    localStorage.setItem('productivity-stats', JSON.stringify(stats));
+    if (messages) {
+      localStorage.setItem('productivity-messages', JSON.stringify(messages));
+    }
   } catch (error) {
     console.error('Erro ao salvar:', error);
   }
 };
+
+export { loadData, saveData };
