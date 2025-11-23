@@ -1,7 +1,0 @@
-{
-  "buildCommand": "./build.sh",
-  "outputDirectory": "productivity-bot/dist",
-  "installCommand": "cd productivity-bot && npm install",
-  "framework": "vite"
-}
-
