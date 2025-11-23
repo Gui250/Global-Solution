@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd productivity-bot && npm ci && npm run build",
+  "buildCommand": "cd productivity-bot && npm install && npm run build",
   "outputDirectory": "productivity-bot/dist",
-  "installCommand": "cd productivity-bot && npm ci",
+  "installCommand": "cd productivity-bot && npm install",
   "framework": "vite"
 }
 
