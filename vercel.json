@@ -1,7 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "installCommand": "npm ci",
-  "framework": "vite",
-  "nodeVersion": "20.x"
+  "version": 2,
+  "rootDirectory": "productivity-bot"
 }
